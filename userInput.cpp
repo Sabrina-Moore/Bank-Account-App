@@ -1,17 +1,32 @@
-//acquires password and command request
+//acquires ID and password and verifies password
 #include <iostream>
 #include <string>
+#include <vector>
 #include "BankAccountClass.h"
 using namespace std;
 
-void passwordLogin(int password) {
 
-	int data;
-	cout << "Welcome to the bank. Enter password to access your account: " << endl;
-	cin >> data;
+BankAccount* passwordLogin(vector<BankAccount>& ba) { //pass by reference to prevent dangling pointer
 
-	/*if(data != password)*/
-		//what? How do I give them access to their account
-		//how do I restrict their access
+	int inputID;
+	int inputPassword;
+	const int MAXATTEMPT = 6; //give the user 5 tries
 
+
+	//implement two loops here if the user gets their input wrong
+	cout << "Welcome to the bank. Please enter your account ID: " << endl;
+	cin >> inputID;
+
+	cout << "Enter password to access your account : " << endl;
+	cin >> inputPassword;
+
+		//search through users
+		for (auto& acc : ba) {
+			if (acc.getAccountNumber() == inputID && acc.verifyPassword(inputPassword)) {
+				cout << "You are logged in." << endl;
+				return &acc; //return pointer to account
+			}
+		}
+	cout << "Invalid ID or password." << endl;
+	return nullptr;
 }
