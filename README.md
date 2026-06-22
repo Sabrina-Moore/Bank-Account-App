@@ -5,3 +5,6 @@ so I thought I would retry this app with the new parameters:
 - header file BankAccountClass.h
 - Declarations.cpp
 - userInput.cpp
+
+
+The user must verify their password and then can choose to deposit, withdraw, get the balance, and set their password.
