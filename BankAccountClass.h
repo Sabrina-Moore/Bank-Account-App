@@ -8,21 +8,21 @@ using namespace std;
 
 class BankAccount {
 public:
-	BankAccount(int userID, int userPass, double initialBalance); //constructor
+	BankAccount(string userID, string userPass, double initialBalance); //constructor
 	bool deposit(double amount);
 	bool withdraw(double amount);
-	bool setPassword(int oldPass, int newPass);
+	bool setPassword(string oldPass, string newPass);
 
 	double getBalance() const;
-	int getAccountNumber() const;
+	string getAccountNumber() const;
 
-	bool verifyPassword(int userPass) const;
+	bool verifyPassword(string userPass) const;
 
 private:
 	double balance;
-	int password;
-	int accountNumber; //unique number ID //one day make an account number generator?
+	string password;
+	string accountNumber; //unique number ID //one day make an account number generator?
 };
 
 
-#endif // !BANKACCOUNTCLASS.H
+#endif // !BANKACCOUNTCLASS.H#pragma once
