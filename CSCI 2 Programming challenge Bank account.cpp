@@ -15,7 +15,7 @@ void passwordLogin(int password);
 
 int main()
 {
-
+	vector<Bank Account> accounts = {0012, 1234};
 	//account setup 
 	BankAccount ba(500, 1234); //sets account to $500, password 1234
 
