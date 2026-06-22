@@ -7,4 +7,8 @@ so I thought I would retry this app with the new parameters:
 - userInput.cpp
 
 
-The user must verify their password and then can choose to deposit, withdraw, get the balance, and set their password.
+The user must verify their password (currently 1234) and then can choose to deposit, withdraw, get the balance, and set their password.
+
+## Work in Progress features...
+
+Currently, I have not actually set up the switch menu for letting the user choose their actions. 
