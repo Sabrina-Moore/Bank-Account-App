@@ -10,15 +10,20 @@ using namespace std;
 //guard files
 
 //declarations
-void passwordLogin(int password);
+void passwordLogin(vector<BankAccount> accounts);
 
 
 int main()
 {
-	vector<Bank Account> accounts = {0012, 1234, 500};
+	vector<BankAccount> accounts = {0012, 1234, 500};
 
-	//passwordLogin(password);
 
+    BankAccount* loggedInAccount = passwordLogin(accounts);
+
+    if (loggedInAccount != nullptr) {
+        cout << "Your balance is: " << loggedInAccount->getBalance() << endl;
+    }
+    return 0;
 
 	//test
 	// BankAccount ba(500, 1234); //$500, password 1234
