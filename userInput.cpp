@@ -4,14 +4,29 @@
 #include "BankAccountClass.h"
 using namespace std;
 
-void passwordLogin(int password) {
+void passwordLogin(vector<BankAccount> account) {
+	
+	int username;
+	int data; //to cin password
+	cout << "Welcome to the bank. Enter username to access your account: " << endl;
+	cin >> user;
 
-	int data;
-	cout << "Welcome to the bank. Enter password to access your account: " << endl;
+	//check for username
+
+	BankAccount* matchedAccount = nullptr;
+    for (int i = 0; i < accounts.size(); i++) {
+        if (accounts[i].getUsername() == username) {
+            matchedAccount = &accounts[i];
+            break;
+        }
+    }
+	 if (matchedAccount == nullptr) {
+        cout << "No account found with that username." << endl;
+        return nullptr;
+    }
+
+	cin.ignore();
+	cout << "Enter password: " << endl;
 	cin >> data;
-
-	/*if(data != password)*/
-		//what? How do I give them access to their account
-		//how do I restrict their access
 
 }
