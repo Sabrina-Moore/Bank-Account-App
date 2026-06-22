@@ -6,7 +6,7 @@ using namespace std;
 #ifndef BANKACCOUNTCLASS_H
 #define BANKACCOUNTCLASS_H
 
-struct BankAccount {
+class BankAccount {
 public:
 	BankAccount(int userID, int userPass, double initialBalance); //constructor
 	bool deposit(double amount);
