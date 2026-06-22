@@ -4,18 +4,17 @@
 #include "BankAccountClass.h"
 using namespace std;
 
-void passwordLogin(vector<BankAccount> account) {
+void passwordLogin(vector<BankAccount> accounts) {
 	
 	int username;
-	int data; //to cin password
+	int password; //to cin password
 	cout << "Welcome to the bank. Enter username to access your account: " << endl;
-	cin >> user;
+	cin >> username;
 
 	//check for username
-
 	BankAccount* matchedAccount = nullptr;
     for (int i = 0; i < accounts.size(); i++) {
-        if (accounts[i].getUsername() == username) {
+        if (accounts[i].getAccountNumber() == username) {
             matchedAccount = &accounts[i];
             break;
         }
@@ -25,8 +24,16 @@ void passwordLogin(vector<BankAccount> account) {
         return nullptr;
     }
 
+	//check for password
 	cin.ignore();
 	cout << "Enter password: " << endl;
-	cin >> data;
+	cin >> password;
 
+	if (matchedAccount->verifyPassword(password)) {
+        cout << "Access granted." << endl;
+        return matchedAccount;
+    } else {
+        cout << "Incorrect password. Access denied." << endl;
+        return nullptr;
+    }
 }
