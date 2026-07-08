@@ -8,7 +8,14 @@ I thought I would retry this app with the new C++ features I've learned:
 - userInput.cpp for password verification to login and access member functions
 - main file Bank Account App to run functions, initialize database (accounts) and create the switch menu for user features
 
-The user must verify their password (currently 1234) and then can choose to deposit, withdraw, get the balance, and set their password.
+The user must verify their password and then can choose to deposit, withdraw, get the balance, and set their password.
+For testing, there are only three accounts: 
+    BankAccount("0012", "1234", 500),
+		BankAccount("0050", "2134", 1000),
+		BankAccount("0001", "1111", 25)
+    
+The first parameter is their account number, the second is their password, and third is the account balance. 
+
 
 ## Work in Progress features...
 
